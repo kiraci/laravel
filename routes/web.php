@@ -26,5 +26,9 @@ Route::get('/pizzas', function () {
         ['type' => 'veg supreme', 'base' => 'thin & crispy', 'price' => 6]
     ]; 
 
-    return view('pizzas', [ 'pizzas' => $pizzas ]);
+    return view('pizzas', [ 
+        'pizzas' => $pizzas,
+        'name' => request('name'),
+        'age' => request('age')
+     ]);
 });

@@ -18,6 +18,13 @@
                   <p>{{ $pizzas[$i]['type'] }}</p>
                 @endfor -->
 
+                <div>
+                    <p>
+                        Your name: {{ $name }} ----------------
+                        Your name: {{ $age }}
+                    </p>
+                </div>
+
                     @foreach($pizzas as $pizza)
 
                         <div>
