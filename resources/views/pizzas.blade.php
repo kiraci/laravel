@@ -38,9 +38,30 @@
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <h1 style="color:white;">Pizza House of Ankara</h1>
+                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0" style="color:white;">
+                    <h1 >All Pizzas of Pizza House</h1>
                 </div>
+
+                <div class="flex justify-center"  style="color:white;">
+                    <p class="mt-3"> {{ $type }} - {{ $base }} - {{ $price }} </p>
+                </div>
+
+                <div class="flex justify-center"  style="color:white;">
+                    @if( $price > 10 )
+                        <p class="mt-2"> Price is expensive </p>
+                    @elseif( $price < 10 )
+                        <p class="mt-2"> Price is cheap </p>
+                    @else
+                        <p class="mt-2"> Price is normal </p>
+                    @endif
+                </div>
+
+                <div class="flex justify-center"  style="color:white;">
+                    @php
+                        echo("This is blade php.");
+                    @endphp
+                </div>
+
 
             </div>
 
