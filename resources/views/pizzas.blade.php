@@ -42,24 +42,36 @@
                     <h1 >All Pizzas of Pizza House</h1>
                 </div>
 
-                <div class="flex justify-center"  style="color:white;">
-                    <p class="mt-3"> {{ $type }} - {{ $base }} - {{ $price }} </p>
-                </div>
+                <div class="justify-center"  style="color:white;">
 
-                <div class="flex justify-center"  style="color:white;">
-                    @if( $price > 10 )
-                        <p class="mt-2"> Price is expensive </p>
-                    @elseif( $price < 10 )
-                        <p class="mt-2"> Price is cheap </p>
-                    @else
-                        <p class="mt-2"> Price is normal </p>
-                    @endif
-                </div>
+                <!-- @for($i = 0; $i < 5; $i++)
+                  <p>the value of i is {{ $i }}</p>
+                @endfor -->
 
-                <div class="flex justify-center"  style="color:white;">
-                    @php
-                        echo("This is blade php.");
-                    @endphp
+                <!-- @for($i = 0; $i < count($pizzas); $i++)
+                  <p>{{ $pizzas[$i]['type'] }}</p>
+                @endfor -->
+
+                    @foreach($pizzas as $pizza)
+
+                        <div>
+                            <p class="mt-3"> 
+
+                            {{ $loop->index }}: {{ $pizza['type'] }} - {{ $pizza['base'] }} - {{ $pizza['price'] }} 
+                            
+                            @if( $loop->first )
+                                <span> --> This is faster pizza to make </span>
+                            @endif
+
+                            @if( $loop->last)
+                                <span> --> This is slower pizza to make </span>
+                            @endif
+
+                            </p>
+                        </div>
+
+                    @endforeach
+
                 </div>
 
 

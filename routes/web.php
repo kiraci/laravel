@@ -20,11 +20,11 @@ Route::get('/', function () {
 
 Route::get('/pizzas', function () {
 
-    $pizza = [
-        'type' => 'hawaiian',
-        'base' => 'cheesy crust',
-        'price' => 10
+    $pizzas = [
+        ['type' => 'hawaiian', 'base' => 'cheesy crust', 'price' => 10],
+        ['type' => 'volcano', 'base' => 'garlic crust', 'price' => 15],
+        ['type' => 'veg supreme', 'base' => 'thin & crispy', 'price' => 6]
     ]; 
 
-    return view('pizzas', $pizza);
+    return view('pizzas', [ 'pizzas' => $pizzas ]);
 });
